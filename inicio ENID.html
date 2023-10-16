@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JAVA SCRIPT</title>
+	<style>
+		body{
+			padding: 0;
+			margin: 0;
+			background: #a119f6;
+			font-family: Arial;}
+		#contenedor{
+			margin: 20px;
+			padding: 20px;
+			background: rgb(195, 123, 246);
+			text-align: center;
+			border-radius: 20px;
+		}
+		.columna{
+			padding: 10px;
+			margin: 10px;
+			background: rgb(29, 1, 53);
+			float: left;
+			width: 30%;
+			border-radius: 20px;
+			color: white;
+		}
+		input{
+			margin: 10px;
+			width: 50px;
+		}
+		button{
+			margin: 10px;
+		}
+		#Salida1{color: #45FF03;
+				font-size: xx-large;
+			}
+			#Salida2{color: #45FF03;
+				font-size: xx-large;
+			}
+	</style>
+</head>
+<body>
+<div id="contenedor">
+	<h1>Ejercicios java script</h1>
+	<h4>Diseñado por: Jhonny nina</h4>
+	<div class="fila">
+		<div class="columna">
+			<h3>Suma de dos numeros</h3>
+			a=<input id="valor1"><br>
+			b=<input id="valor2"><br>
+			<button onclick="suma()" id="boton">Sumar</button>
+			<div id="Resultado">Resultado</div>
+			<script>
+				function suma(){
+				var a,b,s;
+				a=document.getElementById("valor1").value;
+				b=document.getElementById("valor2").value;
+				s=parseFloat(a)+parseFloat(b);
+				document.getElementById("Resultado").innerHTML=s;}
+			</script>
+	
+
+		</div>
+		<div class="columna">
+			<h3>Area de un triangulo</h3>
+			base=<input id="base"><br>
+			altura=<input id="altura"><br>
+			<button onclick="Calcula()" id="boton">Calcular</button>
+			<div id="Result">Resultado</div>
+			<script>
+				function Calcula(){
+				var base,altura,area;
+				base=document.getElementById("base").value;
+				altura=document.getElementById("altura").value;
+				area=parseFloat(base)*parseFloat(altura)/2;
+				document.getElementById("Result").innerHTML=area;}
+			</script>
+		</div>
+		<div class="columna">
+			<h3>Hipotenusa de un triangulo</h3>
+			cat. Adyacente=<input id="ca"><br>
+			cat. Opuesto=<input id="co"><br>
+			<button onclick="calcular()" id="boton">Calcular</button>
+			<div id="Salida">Resultado</div>
+			<script>
+				function calcular(){
+				var ca,co,h;
+				ca=document.getElementById("ca").value;
+				co=document.getElementById("co").value;
+				h=Math.sqrt(parseFloat(ca)*parseFloat(ca)+parseFloat(co)*parseFloat(co));
+				document.getElementById("Salida").innerHTML=h;}
+			</script>
+		</div>
+	</div>
+	<div class="fila">
+		<div class="columna">
+			<h3>Juego de dados</h3>
+			Nota. Gana si ambos dados salen iguales.<br>
+			<button onclick="lanzar()" id="boton">lanzar</button><br>
+			dado 1=<input id="dado1"><br>
+			dado 2=<input id="dado2"><br>
+			<div id="resultado4" class="salida"><img src="dice0.jpg" id="img1" width="70px">  <img src="dice0.jpg" id="img2" width="70px"></div>
+			<div id="Salida1">Resultado</div>
+			<script>
+				function lanzar(){
+				var d1,d2;
+				d1=Math.floor(Math.random()*6+1);
+				d2=Math.floor(Math.random()*6+1);
+				document.getElementById("dado1").value=d1;
+				document.getElementById("dado2").value=d2;
+				document.getElementById("img1").setAttribute("src","dice"+d1+".jpg");
+				document.getElementById("img2").setAttribute("src","dice"+d2+".jpg");
+				if(d1==d2){document.getElementById("Salida1").innerHTML="GANO!!!";}
+				else{document.getElementById("Salida1").innerHTML="PERDIO...";}
+			}
+			</script>
+		</div>
+		<div class="columna">
+			<h3>DIALOGOS</h3>
+			<button onclick="clic()">Ingresar al juego</button>
+			<script>
+			function clic(){
+			var resp=confirm("Esta seguro de ingresar a este juego?");
+			if (resp==true){
+			var nom=prompt("Ingresa tu nombre"); 
+			alert("Bienvenido a este juego "+nom);
+				if(true){ alert("CARGANDO...");
+			}
+			else{
+			alert("DIOS LE BENDIGA!! GRACIAS");
+			}
+			}}
+			</script>
+		</div>
+		<div class="columna">
+			<h3>Segundo juego de dados</h3>
+			Nota.-Gana si sumados los dos dados dan 7 ó 11.<br>
+			<button onclick="lanzar2()" id="boton">lanzar dado</button><br>
+			dado 1=<input id="d1"><br>
+			dado 2=<input id="d2"><br>
+			<div id="Salida2">Resultado</div>
+			<script>
+				function lanzar2(){
+				var d1,d2,s;
+				d1=Math.floor(Math.random()*6+1);
+				d2=Math.floor(Math.random()*6+1);
+				document.getElementById("d1").value=d1;
+				document.getElementById("d2").value=d2;
+				s=parseFloat(d1)+parseFloat(d2);
+				if(s==7||s==11){
+					document.getElementById("Salida2").innerHTML="GANO!!!";}
+				else{document.getElementById("Salida2").innerHTML="PERDIO...";}
+			}
+			</script>
+		</div>
+	</div>
+</div>
+
+
+
+</body>
+</html>

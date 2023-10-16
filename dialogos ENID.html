@@ -1,0 +1,20 @@
+<meta charset ="utf-8">
+<button onclick="clic3()">Diálogo</button>
+<script>
+	function clic(){
+		alert("Hola muchachos y muchachas");
+	}
+	function clic2(){
+		var nom=prompt("Ingresa tu nombre"); 
+		alert(nom);
+	}
+	function clic3(){
+		var resp=confirm("Esta seguro de eliminar este archivo???");
+		if (resp==true){
+			alert("archivo se eliminó");
+		}
+		else{
+			alert("El archivo se salvo");
+		}
+	}
+</script>
